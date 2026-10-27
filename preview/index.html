@@ -54,7 +54,7 @@
 
   .artista{position:relative; z-index:1; display:flex; align-items:center; margin-bottom:56px}
   .artista figure{width:min(46%,500px); flex-shrink:0}
-  .artista img{width:100%; aspect-ratio:490/690; object-fit:cover; background:#eee}
+  .artista img{width:100%; height:auto}
   .artista .nombre{
     font-family:'Lexend Exa',sans-serif; font-weight:400; text-transform:uppercase; color:#fff; background:var(--copper);
     font-size:clamp(16px,2.4vw,30px); line-height:1.25; letter-spacing:.01em; text-align:center;
@@ -69,11 +69,9 @@
   /* derecha: foto a la derecha, etiqueta a su izquierda */
   .artista.der{justify-content:flex-end}
   .artista.der .nombre{border-radius:36px 0 0 36px; margin-right:-2px}
-  .artista.der img{border-top-left-radius:60% 44%}
   /* izquierda: foto a la izquierda, etiqueta a su derecha */
   .artista.izq{justify-content:flex-start}
   .artista.izq .nombre{border-radius:0 36px 36px 0; margin-left:-2px; order:2}
-  .artista.izq img{border-top-right-radius:60% 44%}
   .artista.der .nombre{margin-top:24%}
   .artista.izq .nombre{margin-top:24%}
 
