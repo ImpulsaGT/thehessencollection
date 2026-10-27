@@ -48,7 +48,7 @@
   .artistas .w1,.artistas .w2{display:none}
   .artistas .conectores{display:none}
   .artista::before{content:""; position:absolute; z-index:-1; top:50%; width:900px; height:600px; transform:translateY(-50%);
-    background:url(img/wave-artista.svg) no-repeat center/100% 100%; opacity:.6; pointer-events:none;
+    background:url(img/wave-artista.svg?v=3) no-repeat center/100% 100%; opacity:.6; pointer-events:none;
     -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
   .artista.der::before{left:calc(min(-24px, (1180px - 100vw) / 2 - 24px) - 190px)}
   .artista.izq::before{right:calc(min(-24px, (1180px - 100vw) / 2 - 24px) - 190px); transform:translateY(-50%) scaleX(-1)}
@@ -112,7 +112,7 @@
     .artistas .w1,.artistas .w2{display:none}
     .artista::before{width:280px; height:320px; background-size:contain;
      
-      background:url(img/wave-artista.svg) no-repeat center/contain; opacity:.5; pointer-events:none;
+      background:url(img/wave-artista.svg?v=3) no-repeat center/contain; opacity:.5; pointer-events:none;
       -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
     .artista.der::before{left:-130px}
     .artista.izq::before{right:-130px; transform:translateY(-50%) scaleX(-1)}
@@ -129,17 +129,17 @@
 <body>
 
 <header class="hero">
-  <img class="waves" src="img/wave1.svg" alt="" aria-hidden="true">
-  <img class="logo" src="img/logo.webp" alt="Hessen" width="300" height="190">
+  <img class="waves" src="img/wave1.svg?v=3" alt="" aria-hidden="true">
+  <img class="logo" src="img/logo.webp?v=3" alt="Hessen" width="300" height="190">
   <h1 class="display">The Hessen<br>Collection</h1>
-  <img class="torre-hero" src="img/torre.webp" alt="Torre Hessen" width="1400" height="1048">
+  <img class="torre-hero" src="img/torre.webp?v=3" alt="Torre Hessen" width="1400" height="1048">
   <a class="desliza" href="#intro" aria-label="Ver más">Desliza
     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
   </a>
 </header>
 
 <section class="intro" id="intro">
-  <img class="torre reveal" src="img/torre.webp" alt="Torre Hessen" width="1400" height="1048">
+  <img class="torre reveal" src="img/torre.webp?v=3" alt="Torre Hessen" width="1400" height="1048">
   <div class="texto reveal">
     <p>En <strong>HESSEN</strong>, el arte encuentra un&nbsp;lugar para&nbsp;trascender.</p>
     <p>Inspirada en la naturaleza y los paisajes que dan origen a su nombre, The Hessen Collection integra arte y arquitectura para dar identidad a cada espacio. Una colección que reinterpreta las formas y texturas de la naturaleza, donde las obras aportan significado y las personas, con sus historias y su forma de habitar, le&nbsp;dan vida&nbsp;al&nbsp;proyecto.</p>
@@ -147,29 +147,29 @@
 </section>
 
 <section class="artistas" id="artistas">
-  <img class="waves w1" src="img/wave2.svg" alt="" aria-hidden="true">
-  <img class="waves w2" src="img/wave2.svg" alt="" aria-hidden="true">
-  <img class="waves conectores" src="img/ondas-artistas.svg" alt="" aria-hidden="true">
+  <img class="waves w1" src="img/wave2.svg?v=3" alt="" aria-hidden="true">
+  <img class="waves w2" src="img/wave2.svg?v=3" alt="" aria-hidden="true">
+  <img class="waves conectores" src="img/ondas-artistas.svg?v=3" alt="" aria-hidden="true">
   <h2 class="display reveal">Conoce a los artistas</h2>
 
   <div class="artista der reveal">
     <a class="nombre" href="artistas/lis.html" aria-label="Ver perfil de Lis Girón">Lis<br>Girón<svg class="ir" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-    <figure><img src="img/lis.webp" alt="Lis Girón" loading="lazy" width="520" height="716"></figure>
+    <figure><img src="img/lis.webp?v=3" alt="Lis Girón" loading="lazy" width="520" height="716"></figure>
   </div>
 
   <div class="artista izq reveal">
-    <figure><img src="img/andres.webp" alt="Andrés del Valle" loading="lazy" width="520" height="755"></figure>
+    <figure><img src="img/andres.webp?v=3" alt="Andrés del Valle" loading="lazy" width="520" height="755"></figure>
     <a class="nombre" href="artistas/andres.html" aria-label="Ver perfil de Andrés del Valle">Andrés<br>del Valle<svg class="ir" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
   </div>
 
   <div class="artista der reveal">
     <a class="nombre" href="artistas/gabriela.html" aria-label="Ver perfil de Gabriela de Rocco">Gabriela<br>de Rocco<svg class="ir" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-    <figure><img src="img/gabriela.webp" alt="Gabriela de Rocco" loading="lazy" width="520" height="754"></figure>
+    <figure><img src="img/gabriela.webp?v=3" alt="Gabriela de Rocco" loading="lazy" width="520" height="754"></figure>
   </div>
 </section>
 
 <footer>
-  <img class="socios" src="img/socios.webp" alt="Un proyecto de IMPULSA y UNMÜSSIG" width="1200" height="302" loading="lazy">
+  <img class="socios" src="img/socios.webp?v=3" alt="Un proyecto de IMPULSA y UNMÜSSIG" width="1200" height="302" loading="lazy">
 </footer>
 
 <script>
