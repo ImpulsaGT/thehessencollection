@@ -53,9 +53,10 @@
   .obras .boton:hover svg{transform:translateX(4px)}
   .obras .nota{margin-top:16px; font-size:14px; letter-spacing:.2em; text-transform:uppercase; color:var(--copper); opacity:.8; font-family:'Lexend Exa',sans-serif}
 
-  footer{text-align:center; padding:0 24px 56px}
+  footer{text-align:center; padding:24px 24px 56px; display:flex; flex-direction:column; align-items:center; gap:40px}
   footer a{display:inline-block}
-  footer img{width:110px; mix-blend-mode:multiply}
+  footer .logo-pie{width:110px; mix-blend-mode:multiply; margin:0 auto}
+  footer .socios{width:min(300px,72%); margin:0 auto}
 
   .reveal{opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease}
   .reveal.on{opacity:1; transform:none}
@@ -81,8 +82,8 @@
 </head>
 <body>
 <header class="top">
-  <img class="ondas" src="../img/wave1.svg" alt="" aria-hidden="true">
-  <a href="../index.html" aria-label="Inicio The Hessen Collection"><img class="logo" src="../img/logo.webp" alt="Hessen" width="300" height="190"></a>
+  <img class="ondas" src="../img/wave1.svg?v=3" alt="" aria-hidden="true">
+  <a href="../index.html" aria-label="Inicio The Hessen Collection"><img class="logo" src="../img/logo.webp?v=3" alt="Hessen" width="300" height="190"></a>
   <a class="volver" href="../index.html#artistas"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Artistas</a>
 </header>
 
@@ -94,8 +95,8 @@
     </div>
   </div>
   <div class="fotos">
-    <img class="principal reveal" src="../img/andres.webp" alt="Andrés del Valle" width="520" height="740">
-    <img class="taller reveal" src="../img/taller-andres.webp" alt="Andrés del Valle en su taller" width="640" height="460" loading="lazy">
+    <img class="principal reveal" src="../img/andres.webp?v=3" alt="Andrés del Valle" width="520" height="740">
+    <img class="taller reveal" src="../img/taller-andres.webp?v=3" alt="Andrés del Valle en su taller" width="640" height="460" loading="lazy">
   </div>
 </main>
 
@@ -104,7 +105,8 @@
 </section>
 
 <footer>
-  <a href="../index.html"><img src="../img/logo.webp" alt="Hessen" width="300" height="190" loading="lazy"></a>
+  <a href="../index.html" aria-label="Inicio The Hessen Collection"><img class="logo-pie" src="../img/logo.webp?v=3" alt="Hessen" width="300" height="190" loading="lazy"></a>
+  <img class="socios" src="../img/socios.webp?v=3" alt="Un proyecto de IMPULSA y UNMÜSSIG" width="1200" height="302" loading="lazy">
 </footer>
 
 <script>
