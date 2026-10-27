@@ -93,13 +93,14 @@
     .hero .waves{width:150px; right:0; top:0; opacity:.55}
     .logo{margin-bottom:36px}
     .intro{grid-template-columns:1fr; gap:28px; padding:16px 16px 0}
-    .intro .texto{order:-1; margin:0 auto; max-width:328px; font-size:16.5px; line-height:1.7; text-align:justify; text-align-last:center; -webkit-hyphens:auto; hyphens:auto}
+    .intro .texto{order:-1; margin:0 auto; max-width:358px; font-size:15.5px; line-height:1.7; text-align:justify; -webkit-hyphens:auto; hyphens:auto}
     .intro .torre{margin:0 auto; max-width:340px}
     .artistas{padding:80px 16px 72px; overflow:hidden}
     .artistas h2{margin-bottom:44px}
     .artistas .w1,.artistas .w2{display:none}
-    .artista::before{content:""; position:absolute; z-index:-1; top:50%; width:240px; height:320px; transform:translateY(-50%);
-      background:url(img/wave-artista.svg) no-repeat center/contain; opacity:.5; pointer-events:none}
+    .artista::before{content:""; position:absolute; z-index:-1; top:50%; width:280px; height:320px; transform:translateY(-50%);
+      background:url(img/wave-artista.svg) no-repeat center/contain; opacity:.5; pointer-events:none;
+      -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
     .artista.der::before{left:-130px}
     .artista.izq::before{right:-130px; transform:translateY(-50%) scaleX(-1)}
     .artistas .conectores{display:none}
@@ -127,7 +128,7 @@
   <img class="torre reveal" src="img/torre.webp" alt="Torre Hessen" width="760" height="1037">
   <div class="texto reveal">
     <p>En <strong>HESSEN</strong>, el arte encuentra un lugar para trascender.</p>
-    <p>Inspirada en la naturaleza y los paisajes que dan origen a su nombre, The Hessen Collection integra arte y arquitectura para dar identidad a cada espacio. Una colección que reinterpreta las formas y texturas de la naturaleza, donde las obras aportan significado y las personas, con sus historias y su forma de habitar, le dan vida al proyecto.</p>
+    <p>Inspirada en la naturaleza y los paisajes que dan origen a su nombre, The Hessen Collection integra arte y arquitectura para dar identidad a cada espacio. Una colección que reinterpreta las formas y texturas de la naturaleza, donde las obras aportan significado y las personas, con sus historias y su forma de habitar, le dan vida&nbsp;al&nbsp;proyecto.</p>
   </div>
 </section>
 
