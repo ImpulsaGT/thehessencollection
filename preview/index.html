@@ -45,7 +45,12 @@
   .artistas .waves{position:absolute; pointer-events:none; opacity:.85; z-index:0}
   .artistas .w1{left:-120px; top:220px; width:420px; transform:rotate(90deg)}
   .artistas .w1,.artistas .w2{display:none}
-  .artistas .conectores{left:-100px; top:0; width:calc(100% + 200px); max-width:none; height:100%; opacity:.9}
+  .artistas .conectores{display:none}
+  .artista::before{content:""; position:absolute; z-index:-1; top:50%; width:900px; height:600px; transform:translateY(-50%);
+    background:url(img/wave-artista.svg) no-repeat center/100% 100%; opacity:.6; pointer-events:none;
+    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
+  .artista.der::before{left:calc(min(-24px, (1180px - 100vw) / 2 - 24px) - 190px)}
+  .artista.izq::before{right:calc(min(-24px, (1180px - 100vw) / 2 - 24px) - 190px); transform:translateY(-50%) scaleX(-1)}
 
   .artista{position:relative; z-index:1; display:flex; align-items:center; margin-bottom:56px}
   .artista figure{width:min(46%,500px); flex-shrink:0}
@@ -98,12 +103,12 @@
     .artistas{padding:80px 16px 72px; overflow:hidden}
     .artistas h2{margin-bottom:44px}
     .artistas .w1,.artistas .w2{display:none}
-    .artista::before{content:""; position:absolute; z-index:-1; top:50%; width:280px; height:320px; transform:translateY(-50%);
+    .artista::before{width:280px; height:320px; background-size:contain;
+     
       background:url(img/wave-artista.svg) no-repeat center/contain; opacity:.5; pointer-events:none;
       -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
     .artista.der::before{left:-130px}
     .artista.izq::before{right:-130px; transform:translateY(-50%) scaleX(-1)}
-    .artistas .conectores{display:none}
     .artista{margin-bottom:40px}
     .artista figure{width:62%}
     .artista .nombre{padding:14px 18px; min-width:0; flex:1; font-size:15px}
