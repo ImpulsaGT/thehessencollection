@@ -34,8 +34,9 @@
 
   /* ---------- INTRO ---------- */
   .intro{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:40px; padding:24px 24px 0}
-  .intro .torre{width:100%; max-width:620px}
-  .intro .texto{font-size:clamp(17px,1.5vw,21px); line-height:1.65; color:var(--ink); text-align:justify; hyphens:auto; max-width:470px}
+  .intro .torre{width:100%; max-width:660px; height:auto}
+  .intro .texto{font-size:clamp(17px,1.5vw,21px); line-height:1.65; color:var(--ink); text-align:left; hyphens:manual; max-width:470px}
+  .intro .texto p{text-wrap:pretty}
   .intro .texto p+p{margin-top:18px}
   .intro .texto strong{font-weight:500}
 
@@ -77,6 +78,7 @@
 
   footer{text-align:center; padding:0 24px 56px}
   footer .logo{width:120px; margin:0 auto; opacity:.9}
+  footer .socios{width:min(560px,100%); margin:64px auto 0; padding-top:40px; border-top:1px solid #e6ddd3}
 
   .torre-hero,.desliza{display:none}
 
@@ -92,7 +94,7 @@
   @media (max-width:760px){
     .hero{min-height:100vh; min-height:100svh; padding:44px 16px 0; justify-content:flex-start}
     .hero h1{font-size:clamp(34px,10.5vw,46px)}
-    .torre-hero{display:block; flex:1 1 0; min-height:0; width:100%; object-fit:contain; object-position:center bottom; margin-top:22px; animation:sube 1.2s ease both .2s}
+    .torre-hero{display:block; width:calc(100% + 32px); max-width:none; height:auto; margin:auto -16px;  animation:sube 1.2s ease both .2s}
     .desliza{display:inline-flex; flex-direction:column; align-items:center; gap:2px; position:absolute; left:50%; bottom:18px; transform:translateX(-50%);
       font-family:'Lexend Exa',sans-serif; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--copper); text-decoration:none;
       background:rgba(255,255,255,.88); padding:8px 14px 6px; border-radius:20px; z-index:3}
@@ -102,7 +104,7 @@
     .hero .waves{width:150px; right:0; top:0; opacity:.55}
     .logo{margin-bottom:36px}
     .intro{grid-template-columns:1fr; gap:28px; padding:16px 16px 0}
-    .intro .texto{order:-1; margin:0 auto; max-width:358px; font-size:15.5px; line-height:1.7; text-align:justify; -webkit-hyphens:auto; hyphens:auto}
+    .intro .texto{order:-1; margin:0 auto; max-width:358px; font-size:15.5px; line-height:1.7; text-align:left; hyphens:manual}
     .intro .torre{margin:0 auto; max-width:340px}
     .artistas{padding:80px 16px 72px; overflow:hidden}
     .artistas h2{margin-bottom:44px}
@@ -119,6 +121,7 @@
     a.nombre .ir{width:14px; height:14px; margin-top:4px}
     .artista.der .nombre{margin-top:30%}
     .artista.izq .nombre{margin-top:30%}
+    footer .socios{margin-top:44px; padding-top:28px; width:100%}
   }
 </style>
 </head>
@@ -128,16 +131,16 @@
   <img class="waves" src="img/wave1.svg" alt="" aria-hidden="true">
   <img class="logo" src="img/logo.webp" alt="Hessen" width="300" height="190">
   <h1 class="display">The Hessen<br>Collection</h1>
-  <img class="torre-hero" src="img/torre.webp" alt="Torre Hessen" width="760" height="1036">
+  <img class="torre-hero" src="img/torre.webp" alt="Torre Hessen" width="1400" height="1048">
   <a class="desliza" href="#intro" aria-label="Ver más">Desliza
     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
   </a>
 </header>
 
 <section class="intro" id="intro">
-  <img class="torre reveal" src="img/torre.webp" alt="Torre Hessen" width="760" height="1037">
+  <img class="torre reveal" src="img/torre.webp" alt="Torre Hessen" width="1400" height="1048">
   <div class="texto reveal">
-    <p>En <strong>HESSEN</strong>, el arte encuentra un lugar para trascender.</p>
+    <p>En <strong>HESSEN</strong>, el arte encuentra un lugar para&nbsp;trascender.</p>
     <p>Inspirada en la naturaleza y los paisajes que dan origen a su nombre, The Hessen Collection integra arte y arquitectura para dar identidad a cada espacio. Una colección que reinterpreta las formas y texturas de la naturaleza, donde las obras aportan significado y las personas, con sus historias y su forma de habitar, le dan vida&nbsp;al&nbsp;proyecto.</p>
   </div>
 </section>
@@ -166,6 +169,7 @@
 
 <footer>
   <img class="logo" src="img/logo.webp" alt="Hessen" width="300" height="190" loading="lazy">
+  <img class="socios" src="img/socios.webp" alt="Un proyecto de IMPULSA y UNMÜSSIG" width="1200" height="302" loading="lazy">
 </footer>
 
 <script>
