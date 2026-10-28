@@ -3,65 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Hessen Collection · Próximamente</title>
-<meta name="description" content="The Hessen Collection — sitio en construcción. Muy pronto.">
-<meta name="theme-color" content="#14211d">
+<title>The Hessen Collection</title>
+<meta name="description" content="En HESSEN, el arte encuentra un lugar para trascender. Conoce The Hessen Collection y a sus artistas.">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="The Hessen Collection">
-<meta property="og:description" content="Estamos construyendo algo especial. Muy pronto.">
+<meta property="og:description" content="En HESSEN, el arte encuentra un lugar para trascender.">
+<meta property="og:image" content="img/torre.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@400;500&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#14211d; --bg2:#0d1613; --gold:#c9a96e; --gold-soft:rgba(201,169,110,.35);
-    --ink:#efe9dd; --muted:#a7b0aa;
+    --copper:#bb7232; --copper-dark:#9e5e27; --ink:#3b3f41; --muted:#5d6265; --bg:#ffffff;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    background:radial-gradient(ellipse at 50% 30%, var(--bg) 0%, var(--bg2) 75%);
-    color:var(--ink); font-family:'Montserrat',system-ui,sans-serif; text-align:center;
-    padding:48px 24px; overflow-x:hidden;
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:clip}
+  .hero{overflow:visible}
+  .intro{position:relative; z-index:1}
+  body{background:var(--bg); color:var(--ink); font-family:'Figtree',system-ui,sans-serif; overflow-x:clip}
+  img{display:block; max-width:100%; height:auto}
+  .display{font-family:'Lexend Exa',sans-serif; font-weight:500; color:var(--copper); text-transform:uppercase; letter-spacing:-.01em; line-height:1.05}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; padding:72px 24px 40px}
+  .hero .waves{position:absolute; top:0; right:0; width:clamp(180px,26vw,360px); opacity:.9; pointer-events:none}
+  .logo{width:clamp(150px,20vw,220px); margin:0 auto 56px; position:relative; mix-blend-mode:multiply}
+  .hero h1{font-size:clamp(38px,8.4vw,104px); position:relative; text-align:center; width:100%}
+
+  /* ---------- INTRO ---------- */
+  .intro{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:40px; padding:24px 24px 0}
+  .intro .torre{width:100%; max-width:660px; height:auto}
+  .intro .texto{font-size:clamp(17px,1.5vw,21px); line-height:1.65; color:var(--ink); text-align:left; hyphens:manual; max-width:520px}
+  .intro .texto p{text-wrap:pretty}
+  .intro .texto p:first-child{text-wrap:wrap}
+  .intro .texto p+p{margin-top:18px}
+  .intro .texto strong{font-weight:500}
+
+  /* ---------- ARTISTAS ---------- */
+  .artistas{position:relative; max-width:1180px; margin:0 auto; padding:110px 24px 120px}
+  .artistas h2{text-align:center; font-size:clamp(26px,4.4vw,52px); margin-bottom:72px; position:relative; z-index:2}
+  .artistas .waves{position:absolute; pointer-events:none; opacity:.85; z-index:0}
+  .artistas .w1{left:-120px; top:220px; width:420px; transform:rotate(90deg)}
+  .artistas .w1,.artistas .w2{display:none}
+  .artistas .conectores{display:none}
+  .artista::before{content:""; position:absolute; z-index:-1; top:50%; width:900px; height:600px; transform:translateY(-50%);
+    background:url(img/wave-artista.svg?v=3) no-repeat center/100% 100%; opacity:.6; pointer-events:none;
+    -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
+  .artista.der::before{left:calc(min(-24px, (1180px - 100vw) / 2 - 24px) - 190px)}
+  .artista.izq::before{right:calc(min(-24px, (1180px - 100vw) / 2 - 24px) - 190px); transform:translateY(-50%) scaleX(-1)}
+
+  .artista{position:relative; z-index:1; display:flex; align-items:center; margin-bottom:56px}
+  .artista figure{width:min(46%,500px); flex-shrink:0}
+  .artista img{width:100%; height:auto}
+  .artista .nombre{
+    font-family:'Lexend Exa',sans-serif; font-weight:400; text-transform:uppercase; color:#fff; background:var(--copper);
+    font-size:clamp(16px,2.4vw,30px); line-height:1.25; letter-spacing:.01em; text-align:center;
+    padding:22px 44px; min-width:min(330px,40vw); position:relative; z-index:2;
   }
-  .frame{
-    position:fixed; inset:16px; border:1px solid var(--gold-soft); pointer-events:none;
+  a.nombre{display:block; text-decoration:none; cursor:pointer; transition:background .25s ease, transform .25s ease}
+  a.nombre .ir{display:block; margin:8px auto 0; opacity:.85; transition:transform .25s ease}
+  a.nombre:hover, a.nombre:focus-visible{background:var(--copper-dark)}
+  a.nombre:hover .ir{transform:translate(2px,-2px)}
+  a.nombre:focus-visible{outline:2px solid var(--copper-dark); outline-offset:3px}
+  a.nombre:active{transform:scale(.98)}
+  /* derecha: foto a la derecha, etiqueta a su izquierda */
+  .artista.der{justify-content:flex-end}
+  .artista.der .nombre{border-radius:36px 0 0 36px; margin-right:-2px}
+  /* izquierda: foto a la izquierda, etiqueta a su derecha */
+  .artista.izq{justify-content:flex-start}
+  .artista.izq .nombre{border-radius:0 36px 36px 0; margin-left:-2px; order:2}
+  .artista.der .nombre{margin-top:24%}
+  .artista.izq .nombre{margin-top:24%}
+
+  footer{text-align:center; padding:24px 24px 56px; display:flex; flex-direction:column; align-items:center; gap:40px}
+  footer .logo-pie{width:120px; mix-blend-mode:multiply; margin:0 auto}
+  footer .logo{width:120px; margin:0 auto; opacity:.9}
+  footer .socios{width:min(220px,60%); margin:0 auto}
+
+  .torre-hero,.desliza{display:none}
+
+  /* aparición suave */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .9s ease, transform .9s ease}
+  .reveal.on{opacity:1; transform:none}
+  @keyframes sube{from{opacity:0; transform:translateY(30px)}to{opacity:1; transform:none}}
+  @keyframes rebote{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+  @media (prefers-reduced-motion:reduce){.torre-hero,.desliza svg{animation:none}}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none}}
+
+  /* ---------- MÓVIL ---------- */
+  @media (max-width:760px){
+    .hero{min-height:100vh; min-height:100svh; padding:44px 16px 0; justify-content:flex-start}
+    .hero h1{font-size:clamp(34px,10.5vw,46px)}
+    .torre-hero{display:block; width:calc(100% + 32px); max-width:none; height:auto; margin:auto -16px;  animation:sube 1.2s ease both .2s}
+    .desliza{display:inline-flex; flex-direction:column; align-items:center; gap:2px; position:absolute; left:50%; bottom:18px; transform:translateX(-50%);
+      font-family:'Lexend Exa',sans-serif; font-size:10px; letter-spacing:.25em; text-transform:uppercase; color:var(--copper); text-decoration:none;
+      background:rgba(255,255,255,.88); padding:8px 14px 6px; border-radius:20px; z-index:3}
+    .desliza svg{animation:rebote 1.8s ease-in-out infinite}
+    .intro{padding-top:56px}
+    .intro .torre{display:none}
+    .intro .texto p, .intro .texto p:first-child{text-wrap:balance}
+    .hero .waves{width:150px; right:0; top:0; opacity:.55}
+    .logo{margin-bottom:36px}
+    .intro{grid-template-columns:1fr; gap:28px; padding:16px 16px 0}
+    .intro .texto{order:-1; margin:0 auto; max-width:358px; font-size:clamp(14.5px,4vw,16px); line-height:1.7; text-align:center; hyphens:manual}
+    .intro .torre{margin:0 auto; max-width:340px}
+    .artistas{padding:80px 16px 72px; overflow:hidden}
+    .artistas h2{margin-bottom:44px}
+    .artistas .w1,.artistas .w2{display:none}
+    .artista::before{width:280px; height:320px; background-size:contain;
+     
+      background:url(img/wave-artista.svg?v=3) no-repeat center/contain; opacity:.5; pointer-events:none;
+      -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent)}
+    .artista.der::before{left:-130px}
+    .artista.izq::before{right:-130px; transform:translateY(-50%) scaleX(-1)}
+    .artista{margin-bottom:40px}
+    .artista figure{width:62%}
+    .artista .nombre{padding:14px 18px; min-width:0; flex:1; font-size:15px}
+    a.nombre .ir{width:14px; height:14px; margin-top:4px}
+    .artista.der .nombre{margin-top:30%}
+    .artista.izq .nombre{margin-top:30%}
+    footer .socios{width:min(190px,55%)}
+    footer{gap:32px}
+    footer .logo-pie{width:100px}
   }
-  main{max-width:560px; width:100%; animation:fade 1.6s ease both}
-  .eyebrow{
-    font-size:11px; letter-spacing:.45em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;
-  }
-  h1{
-    font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(40px,11vw,68px);
-    line-height:1.02; letter-spacing:.02em;
-  }
-  h1 em{font-style:italic; color:var(--gold)}
-  .rule{width:64px; height:1px; background:var(--gold); margin:30px auto}
-  h2{
-    font-size:13px; font-weight:500; letter-spacing:.3em; text-transform:uppercase; margin-bottom:14px;
-  }
-  p{font-size:15px; line-height:1.7; color:var(--muted); font-weight:300; max-width:420px; margin:0 auto}
-  .progress{
-    margin:36px auto 0; width:180px; height:1px; background:var(--gold-soft); position:relative; overflow:hidden;
-  }
-  .progress::after{
-    content:""; position:absolute; top:0; left:-40%; width:40%; height:100%; background:var(--gold);
-    animation:slide 2.4s ease-in-out infinite;
-  }
-  @keyframes slide{to{left:100%}}
-  @keyframes fade{from{opacity:0; transform:translateY(12px)}to{opacity:1; transform:none}}
-  @media (prefers-reduced-motion:reduce){main,.progress::after{animation:none}}
 </style>
 </head>
 <body>
-  <div class="frame" aria-hidden="true"></div>
-  <main>
-    <div class="eyebrow">Próximamente</div>
-    <h1>The Hessen<br><em>Collection</em></h1>
-    <div class="rule"></div>
-    <h2>Sitio en construcción</h2>
-    <p>Estamos preparando algo especial.</p>
-    <div class="progress" aria-hidden="true"></div>
-  </main>
+
+<header class="hero">
+  <img class="waves" src="img/wave1.svg?v=3" alt="" aria-hidden="true">
+  <img class="logo" src="img/logo.webp?v=3" alt="Hessen" width="300" height="190">
+  <h1 class="display">The Hessen<br>Collection</h1>
+  <img class="torre-hero" src="img/torre.webp?v=3" alt="Torre Hessen" width="1400" height="1048">
+  <a class="desliza" href="#intro" aria-label="Ver más">Desliza
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</header>
+
+<section class="intro" id="intro">
+  <img class="torre reveal" src="img/torre.webp?v=3" alt="Torre Hessen" width="1400" height="1048">
+  <div class="texto reveal">
+    <p>En <strong>HESSEN</strong>, el arte encuentra un&nbsp;lugar para&nbsp;trascender.</p>
+    <p>Inspirada en la naturaleza y los paisajes que dan origen a su nombre, The Hessen Collection integra arte y arquitectura para dar identidad a cada espacio. Una colección que reinterpreta las formas y texturas de la naturaleza, donde las obras aportan significado y las personas, con sus historias y su forma de habitar, le&nbsp;dan vida&nbsp;al&nbsp;proyecto.</p>
+  </div>
+</section>
+
+<section class="artistas" id="artistas">
+  <img class="waves w1" src="img/wave2.svg?v=3" alt="" aria-hidden="true">
+  <img class="waves w2" src="img/wave2.svg?v=3" alt="" aria-hidden="true">
+  <img class="waves conectores" src="img/ondas-artistas.svg?v=3" alt="" aria-hidden="true">
+  <h2 class="display reveal">Conoce a los artistas</h2>
+
+  <div class="artista der reveal">
+    <a class="nombre" href="artistas/lis.html" aria-label="Ver perfil de Lis Girón">Lis<br>Girón<svg class="ir" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    <figure><img src="img/lis.webp?v=3" alt="Lis Girón" loading="lazy" width="520" height="716"></figure>
+  </div>
+
+  <div class="artista izq reveal">
+    <figure><img src="img/andres.webp?v=3" alt="Andrés del Valle" loading="lazy" width="520" height="755"></figure>
+    <a class="nombre" href="artistas/andres.html" aria-label="Ver perfil de Andrés del Valle">Andrés<br>del Valle<svg class="ir" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+  </div>
+
+  <div class="artista der reveal">
+    <a class="nombre" href="artistas/gabriela.html" aria-label="Ver perfil de Gabriela de Rocco">Gabriela<br>de Rocco<svg class="ir" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    <figure><img src="img/gabriela.webp?v=3" alt="Gabriela de Rocco" loading="lazy" width="520" height="754"></figure>
+  </div>
+</section>
+
+<footer>
+  <a href="#" aria-label="Inicio"><img class="logo-pie" src="img/logo.webp?v=3" alt="Hessen" width="300" height="190" loading="lazy"></a>
+  <img class="socios" src="img/socios.webp?v=3" alt="Un proyecto de IMPULSA y UNMÜSSIG" width="1200" height="302" loading="lazy">
+</footer>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target);} });
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
 </body>
 </html>
